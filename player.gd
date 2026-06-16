@@ -10,8 +10,8 @@ var max_jumps = 2
 var jump_count = 0
 
 # 디버깅
-var is_measuring_time = false  # 현재 시간을 재고 있는 중인지 체크하는 스위치
-var elapsed_time = 0.0         # 누적된 점프 시간을 저장할 변수
+var is_measuring_time = false # 현재 시간을 재고 있는 중인지 체크하는 스위치
+var elapsed_time = 0.0 # 누적된 점프 시간을 저장할 변수
 
 # 프로젝트에 기본 설정된 중력 값을 가져와 변수에 저장해.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -35,18 +35,14 @@ func _physics_process(delta):
 		
 		# 첫 번째 점프를 시작할 때만 타이머를 작동시켜.
 		if jump_count == 1:
-			elapsed_time = 0.0          # 시간 초기화
-			is_measuring_time = true     # 타이머 작동 시작!
+			elapsed_time = 0.0 # 시간 초기화
+			is_measuring_time = true # 타이머 작동 시작!
 			print("🚀 [디버그] 점프 시작! 타이머 가동.")
 		else:
 			print("🚀 [디버그] 공중에서 2단 점프 추가!")
 
-	# 4. 좌우 이동
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	# 4. 좌우 이동은 없음
+	velocity.x = 0;
 
 	# 5. 물리 계산 적용 (이 함수가 실행되면서 바닥 충돌 여부가 업데이트돼)
 	move_and_slide()
