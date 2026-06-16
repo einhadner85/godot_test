@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://mpj6ss17jf6i"]
+
+[ext_resource type="Texture2D" uid="uid://b8wsileoxwlbn" path="res://red-banana-md.png" id="1_sl1jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aubd6"]
+size = Vector2(170, 143)
+
+[node name="Obstacle" type="StaticBody2D" unique_id=142312696]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=666958543]
+position = Vector2(85.25, 72.75)
+scale = Vector2(0.543771, 0.592827)
+texture = ExtResource("1_sl1jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33591156]
+position = Vector2(90, 74.5)
+shape = SubResource("RectangleShape2D_aubd6")
