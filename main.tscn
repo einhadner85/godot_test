@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jg06hvqhn6qs" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b42eouw8fbhgx" path="res://icon.svg" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://buls2u64wkufm" path="res://scrolling_background.gd" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cw0q52lko4e3y" path="res://free-icon-tree-7105071.png" id="4_1bvp3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(2000, 20)
@@ -29,11 +31,21 @@ shape = SubResource("RectangleShape2D_1bvp3")
 script = ExtResource("1_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=927108361]
-position = Vector2(248, -159)
+position = Vector2(-74, -72)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=522375246]
-position = Vector2(247.5, -158.75)
+position = Vector2(-74.5, -71.75)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2057834374]
+
+[node name="ScrollingBackground" type="ParallaxBackground" parent="." unique_id=1514927145]
+script = ExtResource("3_h2yge")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ScrollingBackground" unique_id=605816104]
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollingBackground/ParallaxLayer" unique_id=1750966648]
+position = Vector2(237, 123)
+texture = ExtResource("4_1bvp3")
