@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://mpj6ss17jf6i"]
 
 [ext_resource type="Texture2D" uid="uid://b8wsileoxwlbn" path="res://red-banana-md.png" id="1_sl1jc"]
+[ext_resource type="Script" uid="uid://cwuv821pqu62s" path="res://obstacle.gd" id="2_aubd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aubd6"]
 size = Vector2(170, 143)
 
 [node name="Obstacle" type="StaticBody2D" unique_id=142312696]
+script = ExtResource("2_aubd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=666958543]
 position = Vector2(85.25, 72.75)

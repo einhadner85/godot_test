@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b42eouw8fbhgx" path="res://icon.svg" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://buls2u64wkufm" path="res://scrolling_background.gd" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://cw0q52lko4e3y" path="res://free-icon-tree-7105071.png" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://covhe5qjoboa4" path="res://obstacle_spawner.gd" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
 size = Vector2(2000, 20)
@@ -50,3 +51,10 @@ motion_mirroring = Vector2(1000, 0)
 position = Vector2(126.5, 227)
 scale = Vector2(0.5683594, 0.59375)
 texture = ExtResource("4_1bvp3")
+
+[node name="ObstacleSpawner" type="Node2D" parent="." unique_id=1481476507]
+position = Vector2(338, -18)
+script = ExtResource("5_lquwl")
+
+[node name="Timer" type="Timer" parent="ObstacleSpawner" unique_id=1188731234]
+autostart = true
