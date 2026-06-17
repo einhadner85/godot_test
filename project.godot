@@ -14,6 +14,10 @@ config/name="test_app"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://bjl4wc2gfmsga"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

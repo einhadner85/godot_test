@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 # 캐릭터의 이동 속도와 점프 힘을 변수로 설정해. 
 # 숫자를 바꾸면 속도와 점프 높이가 달라져!
-const SPEED = 300.0
+#const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 #점프 제한
