@@ -13,6 +13,17 @@ size = Vector2(2000, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(128, 128)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Main" type="Node2D" unique_id=1243958486]
 position = Vector2(568, 358)
 
@@ -20,24 +31,24 @@ position = Vector2(568, 358)
 
 [node name="ColorRect" type="ColorRect" parent="Ground" unique_id=1080580999]
 offset_left = -626.0
-offset_top = 22.0
+offset_top = 159.0
 offset_right = 1374.0
-offset_bottom = 42.0
+offset_bottom = 179.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=382106314]
-position = Vector2(373, 32)
+position = Vector2(373, 169)
 shape = SubResource("RectangleShape2D_1bvp3")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=229976336]
 script = ExtResource("1_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=927108361]
-position = Vector2(-74, -72)
+position = Vector2(-74, 78)
 texture = ExtResource("2_h2yge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=522375246]
-position = Vector2(-74.5, -71.75)
+position = Vector2(-74.5, 78.25)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2057834374]
@@ -50,12 +61,12 @@ script = ExtResource("3_h2yge")
 motion_mirroring = Vector2(1000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ScrollingBackground/ParallaxLayer" unique_id=1750966648]
-position = Vector2(126.5, 227)
+position = Vector2(126.5, 365.00018)
 scale = Vector2(0.5683594, 0.59375)
 texture = ExtResource("4_1bvp3")
 
 [node name="ObstacleSpawner" type="Node2D" parent="." unique_id=1481476507]
-position = Vector2(338, -18)
+position = Vector2(338, 47)
 script = ExtResource("5_lquwl")
 
 [node name="Timer" type="Timer" parent="ObstacleSpawner" unique_id=1188731234]
@@ -71,15 +82,17 @@ anchors_preset = -1
 anchor_left = 0.008
 anchor_right = 0.066
 anchor_bottom = 0.067
-offset_left = 576.784
-offset_top = 254.0
-offset_right = 601.968
-offset_bottom = 293.58398
+offset_left = 453.784
+offset_top = 235.0
+offset_right = 598.968
+offset_bottom = 298.58398
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
 text = "GAME OVER"
 
 [node name="Button" type="Button" parent="GameOverUI" unique_id=1218281795]
-offset_left = 606.0
-offset_top = 290.0
-offset_right = 656.0
-offset_bottom = 321.0
+offset_left = 540.0
+offset_top = 287.0
+offset_right = 590.0
+offset_bottom = 318.0
 text = "Retry"

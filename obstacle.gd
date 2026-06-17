@@ -1,9 +1,5 @@
 extends StaticBody2D
 
-# ⚠️ 중요: 네가 배경 스크립트(scrolling_background.gd)에 설정했던
-# scroll_speed 값과 똑같은 숫자로 맞춰줘! (예: 10.0 또는 300.0)
-# var speed = 350.0
-
 func _ready():
 	# 게임에 생성되자마자 스스로 'obstacle' 이라는 이름표(그룹)를 달게 됩니다.
 	add_to_group("obstacle")
