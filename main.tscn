@@ -40,6 +40,7 @@ position = Vector2(-74.5, -71.75)
 shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2057834374]
+process_mode = 4
 
 [node name="ScrollingBackground" type="ParallaxBackground" parent="." unique_id=1514927145]
 script = ExtResource("3_h2yge")
