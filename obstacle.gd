@@ -4,6 +4,10 @@ extends StaticBody2D
 # scroll_speed 값과 똑같은 숫자로 맞춰줘! (예: 10.0 또는 300.0)
 var speed = 350.0
 
+func _ready():
+	# 게임에 생성되자마자 스스로 'obstacle' 이라는 이름표(그룹)를 달게 됩니다.
+	add_to_group("obstacle")
+
 func _physics_process(delta):
 	# 매 프레임마다 왼쪽(-x)으로 이동시킵니다.
 	position.x -= speed * delta

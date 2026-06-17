@@ -37,9 +37,9 @@ func _physics_process(delta):
 		if jump_count == 1:
 			elapsed_time = 0.0 # 시간 초기화
 			is_measuring_time = true # 타이머 작동 시작!
-			print("🚀 [디버그] 점프 시작! 타이머 가동.")
+			print("[debug_1000] 점프 시작! 타이머 가동.")
 		else:
-			print("🚀 [디버그] 공중에서 2단 점프 추가!")
+			print("[debug_1001] 공중에서 2단 점프 추가!")
 
 	# 4. 좌우 이동은 없음
 	velocity.x = 0;
@@ -52,3 +52,15 @@ func _physics_process(delta):
 	if is_measuring_time and is_on_floor():
 		print("[debug_0001] 착지 완료! 공중에 머문 시간: %.2f초" % [elapsed_time])
 		is_measuring_time = false # 착지했으니 타이머를 꺼줘.
+
+	# 이번 프레임에 부딪힌 모든 물체를 하나씩 확인합니다.
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		# 만약 부딪힌 물체의 이름표(그룹)가 "obstacle" 이라면?
+		if collider.is_in_group("obstacle"):
+			print("[debug_0002] 장애물에 부딪혔습니다! 게임 오버!")
+			
+			# 현재 씬을 완전히 처음부터 다시 불러옵니다 (즉각 재시작)
+			get_tree().reload_current_scene()
