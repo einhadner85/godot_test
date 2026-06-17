@@ -1,10 +1,5 @@
 extends CharacterBody2D
 
-# 캐릭터의 이동 속도와 점프 힘을 변수로 설정해. 
-# 숫자를 바꾸면 속도와 점프 높이가 달라져!
-#const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
 #점프 제한
 var max_jumps = 2
 var jump_count = 0
@@ -30,7 +25,7 @@ func _physics_process(delta):
 
 	# 3. 점프 로직 및 디버그 메시지 출력
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
-		velocity.y = JUMP_VELOCITY
+		velocity.y = Global.JUMP_VELOCITY
 		jump_count += 1
 		
 		# 첫 번째 점프를 시작할 때만 타이머를 작동시켜.
@@ -62,5 +57,5 @@ func _physics_process(delta):
 		if collider.is_in_group("obstacle"):
 			print("[debug_0002] 장애물에 부딪혔습니다! 게임 오버!")
 			
-			# 현재 씬을 완전히 처음부터 다시 불러옵니다 (즉각 재시작)
-			get_tree().reload_current_scene()
+			# UI 그룹에 신호를 보내 게임 오버 화면을 띄우고 시간을 멈춥니다.
+			get_tree().call_group("game_over_ui", "show_game_over")

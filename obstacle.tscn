@@ -4,16 +4,16 @@
 [ext_resource type="Script" uid="uid://cwuv821pqu62s" path="res://obstacle.gd" id="2_aubd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aubd6"]
-size = Vector2(170, 143)
+size = Vector2(95, 143)
 
 [node name="Obstacle" type="StaticBody2D" unique_id=142312696]
 script = ExtResource("2_aubd6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=666958543]
-position = Vector2(85.25, 72.75)
-scale = Vector2(0.543771, 0.592827)
+position = Vector2(51.75, 72.75)
+scale = Vector2(0.3181818, 0.592827)
 texture = ExtResource("1_sl1jc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=33591156]
-position = Vector2(90, 74.5)
+position = Vector2(52.5, 74.5)
 shape = SubResource("RectangleShape2D_aubd6")
