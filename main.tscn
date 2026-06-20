@@ -19,7 +19,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0.39215687)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -107,9 +107,12 @@ anchor_right = 0.066
 anchor_bottom = 0.067
 offset_left = 460.784
 offset_top = 51.0
-offset_right = 605.968
-offset_bottom = 114.584
+offset_right = 578.968
+offset_bottom = 76.584
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mycd")
 text = "-"
 script = ExtResource("7_272bh")
+
+[node name="ScoreTimer" type="Timer" parent="ScoreHud/ScoreLabel" unique_id=1090371294]
+autostart = true
