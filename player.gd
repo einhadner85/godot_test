@@ -59,3 +59,4 @@ func _physics_process(delta):
 			
 			# UI 그룹에 신호를 보내 게임 오버 화면을 띄우고 시간을 멈춥니다.
 			get_tree().call_group("game_over_ui", "show_game_over")
+			get_tree().call_group("score_manager", "save_final_score")
