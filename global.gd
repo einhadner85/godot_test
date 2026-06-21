@@ -54,7 +54,10 @@ func load_leaderboard() -> Array:
 		var json = JSON.new()
 		var error = json.parse(json_string)
 		if error == OK:
-			return json.data as Array
+			var int_array: Array[int] = []
+			for num in json.data:
+				int_array.append(int(num)) # 여기서 4.0이 다시 4로 깔끔하게 변환됨
+			return int_array
 			
 	return []
 # 점수표 기능 구간 끝 ======================================================
