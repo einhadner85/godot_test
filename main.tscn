@@ -75,7 +75,6 @@ autostart = true
 
 [node name="GameOverUI" type="CanvasLayer" parent="." unique_id=1348767411]
 process_mode = 3
-visible = false
 script = ExtResource("6_7mycd")
 
 [node name="Label" type="Label" parent="GameOverUI" unique_id=1422023568]
